@@ -1,5 +1,6 @@
 # For DBus tray icons
-exec --no-startup-id snixembed --fork
+# This is already in XDG autostart
+# exec --no-startup-id snixembed --fork
 
 bar {
 	status_command i3blocks
