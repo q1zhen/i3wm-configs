@@ -1,0 +1,53 @@
+# USED PLUGINS
+# dmenu
+# i3lock-color (git + script)
+# i3blocks
+# snixembed (git + script)
+# i3status
+# feh
+# playerctl
+# i3ipc (apt python3)
+
+set $mod Mod4
+set $wallpaper ~/Files/Contents/Wallpapers/catppuccin-wallpapers/landscapes/Cloudsnight.jpg
+show_marks no
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+set $i3l 3columns 0.6 0.5 2 left to workspace $ws1
+set $i3l 3columns 0.6 0.5 2 left to workspace $ws4
+set $i3l 3columns 0.6 0.5 2 left to workspace $ws5
+
+set $i3l autosplit to workspace $ws2
+set $i3l autosplit to workspace $ws3
+
+set $refresh_i3status killall -SIGUSR1 i3status
+
+# XDG autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# Screensaver-related stuff
+# exec --no-startup-id xset dpms 600 900 1200
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i $wallpaper -F -k --time-str="%I:%M %p" --date-str="%A %-d %b %Y" --time-color=ffffffff --date-color=ffffffff --indicator
+
+# Network
+exec --no-startup-id nm-applet
+
+include workspaces
+include layouts
+include display
+include audio
+include keybinds
+include bar
+include styles
+include apps

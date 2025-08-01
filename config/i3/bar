@@ -1,0 +1,9 @@
+# For DBus tray icons
+exec --no-startup-id snixembed --fork
+
+bar {
+	status_command i3blocks
+	output primary
+	tray_padding 4
+	position top
+}

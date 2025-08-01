@@ -1,0 +1,29 @@
+[time]
+command=LC_TIME=C date '+%I:%M %p, %A %-d %B %Y'
+interval=1
+
+[volume]
+label=Vol
+command=amixer get Master | awk -F'[][]' '/%/ { print $2; exit }'
+interval=1
+signal=10
+
+[btc]
+full_text=BTC
+command=python3 .config/i3blocks/crypto.py BTC 0
+interval=30
+
+[eth]
+full_text=ETH
+command=python3 .config/i3blocks/crypto.py ETH 0
+interval=30
+
+[sol]
+full_text=SOL
+command=python3 .config/i3blocks/crypto.py SOL 1
+interval=30
+
+[ip]
+full_text=IP Unknown
+command=curl -s http://ip-api.com/json/ | jq -r '"[\(.countryCode)] \(.city)"'
+interval=60

@@ -1,0 +1,8 @@
+font pango: Monaspace Argon, Noto Sans CJK KR 10
+
+gaps inner 16
+title_align center
+
+focus_follows_mouse no
+
+for_window [all] border normal 1

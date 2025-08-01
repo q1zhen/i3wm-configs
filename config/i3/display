@@ -1,0 +1,10 @@
+exec --no-startup-id xrandr --output DP-2 --rotate right && \
+	xrandr --output DP-0 --mode 2560x1440 --rate 170 --right-of DP-2 && \
+	feh --bg-fill $wallpaper
+
+# QT stuff here
+exec --no-startup-id export QT_AUTO_SCREEN_SCALE_FACTOR=0
+exec --no-startup-id export QT_SCALE_FACTOR=1
+
+# Redshift
+exec --no-startup-id redshift -l 31:121
