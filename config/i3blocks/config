@@ -52,7 +52,7 @@ interval=30
 
 [ip]
 min_width=[HK]
-full_text=[IP]
+full_text=[--]
 command=curl -s http://ip-api.com/json/ | jq -r '"[\(.countryCode)]"'
 interval=300
 

@@ -14,4 +14,4 @@ assign [class="thunderbird-esr"] $ws3
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Return exec firefox
 bindsym $mod+c exec firefox --new-window https://chatgpt.com
-bindsym $mod+Mod1+l exec loginctl lock-session
+bindsym $mod+Escape exec loginctl lock-session
