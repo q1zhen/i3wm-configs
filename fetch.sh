@@ -2,7 +2,7 @@
 
 # List of directories to back up from ~/.config
 # Add any other directories you want to back up here (e.g., "polybar", "rofi")
-config_dirs=("i3" "i3blocks")
+config_dirs=("i3" "i3blocks" "dunst")
 
 # Create a backup of the old config directory
 if [ -d "config" ]; then

@@ -6,3 +6,11 @@ title_align center
 focus_follows_mouse no
 
 for_window [all] border normal 1
+
+client.focused           $maroon $maroon $base $yellow $maroon
+client.focused_inactive  $overlay0 $base $text  $subtext1 $overlay0
+client.unfocused         $overlay0 $base $text  $overlay0 $overlay0
+client.urgent            $sapphire $sapphire $base $green  $sapphire
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+

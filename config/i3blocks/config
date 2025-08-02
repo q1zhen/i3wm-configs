@@ -1,29 +1,64 @@
-[time]
-command=LC_TIME=C date '+%I:%M %p, %A %-d %B %Y'
-interval=1
+separator_block_width=16
 
-[volume]
-label=Vol
-command=amixer get Master | awk -F'[][]' '/%/ { print $2; exit }'
+[media]
+full_text=
+command=playerctl metadata title
+interval=1
+separator=false
+
+[prev]
+full_text=
+command=playerctl previous
+separator=false
+separator_block_width=5
+
+[playpause]
+full_text=
+separator=false
+separator_block_width=5
+command=bash .config/i3blocks/media.sh
 interval=1
 signal=10
 
+[next]
+full_text=
+command=playerctl next
+
+[time]
+command=LC_TIME=C date '+%I:%M %p, %A %-d %B %Y'
+interval=1
+color=#ffffff
+
 [btc]
-full_text=BTC
+full_text=BTC $---,--- (--.--%)
+min_width=BTC $---,--- (--.--%)
+color=#9399b2
 command=python3 .config/i3blocks/crypto.py BTC 0
 interval=30
 
 [eth]
-full_text=ETH
+full_text=ETH $-,--- (--.--%)
+min_width=ETH $-,--- (--.--%)
+color=#9399b2
 command=python3 .config/i3blocks/crypto.py ETH 0
 interval=30
 
 [sol]
-full_text=SOL
+full_text=SOL $---.- (--.--%)
+min_width=SOL $---.- (--.--%)
+color=#9399b2
 command=python3 .config/i3blocks/crypto.py SOL 1
 interval=30
 
 [ip]
-full_text=IP Unknown
-command=curl -s http://ip-api.com/json/ | jq -r '"[\(.countryCode)] \(.city)"'
-interval=60
+min_width=[HK]
+full_text=[IP]
+command=curl -s http://ip-api.com/json/ | jq -r '"[\(.countryCode)]"'
+interval=300
+
+[volume]
+label=Vol
+min_width=--%
+command=bash .config/i3blocks/volume.sh
+interval=once
+signal=10

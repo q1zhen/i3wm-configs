@@ -5,6 +5,15 @@
 bar {
 	status_command i3blocks
 	output primary
-	tray_padding 4
 	position top
+	workspace_min_width 20
+	colors {
+		background $base
+		statusline $text
+		separator $overlay0
+		focused_workspace $maroon $maroon $base
+		active_workspace $overlay0 $base $text
+		inactive_workspace $overlay0 $base $text
+		urgent_workspace $sapphire $green $base
+	}
 }

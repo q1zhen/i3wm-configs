@@ -30,8 +30,9 @@ args = parser.parse_args()
 base = args.symbol.upper()
 decimal = args.decimal
 
-clicked = os.getenv("BLOCK_BUTTON")
-if clicked: os.system(f"xdg-open https://www.okx.com/trade-spot/{base.lower()}-usdt")
+button = os.getenv("BLOCK_BUTTON")
+if button == "1":
+	os.system(f"xdg-open https://www.okx.com/trade-spot/{base.lower()}-usdt")
 pair = f"{base}USDT"
 try:
 	data = get_ticker_info(pair)
@@ -40,8 +41,8 @@ try:
 	print(f"{base} ${price:,.{decimal}f} ({change_pct:.2f}%)")
 	print(base)
 	print("#a6e3a1" if change_pct > 0 else "#f38ba8")
-except:
-	print(f"{base} ERROR")
-	print(base)
-	print("#9399b2")
+except: pass
+	# print(f"{base} ERROR")
+	# print(base)
+	# print("#9399b2")
 
